@@ -7,9 +7,13 @@ Additional descriptions can be found under:
 http://inspirationlabs.com/blog/docker-and-ipv6
 
 This version is based on the work in https://github.com/DominicBoettger/docker-ipv6
+
 But :
-1. uses discrete capabilites (namely `NET_ADMIN` and `SETPCAP`) and forfeits these after the setup;
-2. is based on `debian:stable`;
+
+  1. uses discrete capabilites (namely `NET_ADMIN` and `SETPCAP`) and forfeits these after the setup;
+  2. is based on `debian:stable`;
+
+
 
 Steps:
 
