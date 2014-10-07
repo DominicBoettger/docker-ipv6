@@ -1,9 +1,11 @@
-FROM ubuntu
-MAINTAINER Dominic Böttger
+FROM    debian:stable
+ENV     DEBIAN_FRONTEND noninteractive
+MAINTAINER boris
 
-RUN apt-get update
-RUN apt-get install ping
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get install -y libcap2-bin netcat6
 
-ADD run.sh /
-RUN chmod +x /run.sh
-CMD ["/run.sh"]
+COPY run_inside.sh /
+COPY run_nocaps.sh /
+RUN chmod +x /run_inside.sh /run_nocaps.sh
+CMD ["/run_inside.sh"]
